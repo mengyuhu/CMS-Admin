@@ -3,6 +3,15 @@ const tokens = {
   admin: {
     token: 'admin-token'
   },
+  contestant: {
+    token: 'contestant-token'
+  },
+  expert: {
+    token: 'expert-token'
+  },
+  publisher: {
+    token: 'publisher-token'
+  },
   editor: {
     token: 'editor-token'
   }
@@ -14,6 +23,24 @@ const users = {
     introduction: 'I am a super administrator',
     avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
     name: 'Super Admin'
+  },
+  'contestant-token': {
+    roles: ['contestant'],
+    introduction: 'I am a contestant',
+    avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+    name: 'contestant'
+  },
+  'expert-token': {
+    roles: ['expert'],
+    introduction: 'I am a expert',
+    avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+    name: 'expert'
+  },
+  'publisher-token': {
+    roles: ['publisher'],
+    introduction: 'I am a publisher',
+    avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+    name: 'publisher'
   },
   'editor-token': {
     roles: ['editor'],
@@ -34,12 +61,13 @@ export default [
 
       // mock error
       if (!token) {
+        console.log(token)
         return {
           code: 60204,
           message: 'Account and password are incorrect.'
         }
       }
-
+      console.log(token)
       return {
         code: 20000,
         data: token
